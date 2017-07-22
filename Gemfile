@@ -50,4 +50,6 @@ gem 'twitter'
 
 gem 'puma'
 
+gem 'pg'
+
 
