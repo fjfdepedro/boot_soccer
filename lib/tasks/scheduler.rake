@@ -13,7 +13,7 @@ namespace :scheduler do
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')      
       #puts tweet.text
-      #puts tweet_p.strip
+      puts tweet_p.strip
       $twitter.update(tweet_p)
     end
   end
@@ -25,7 +25,7 @@ namespace :scheduler do
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
       #puts tweet.text
-      #puts tweet_p.strip
+      puts tweet_p.strip
       $twitter.update(tweet_p)
     end
   end
@@ -37,7 +37,7 @@ namespace :scheduler do
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
       #puts tweet.text
-      #puts tweet_p.strip
+      puts tweet_p.strip
       $twitter.update(tweet_p)
     end
   end
