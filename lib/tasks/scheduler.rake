@@ -41,7 +41,7 @@ namespace :scheduler do
       $twitter.update(tweet_p.strip)
     end
   end
-  task :recorder => :environment do
+  task :recorder do
     $twitter.search("'have signed', lang: 'en'", result_type: "recent").take(50).each do |tweet|
       #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
