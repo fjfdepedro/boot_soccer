@@ -1,0 +1,2 @@
+class TweetFile < ApplicationRecord
+end

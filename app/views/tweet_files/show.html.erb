@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @tweet_file.text %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @tweet_file.date %>
+</p>
+
+<p>
+  <strong>Coordinates:</strong>
+  <%= @tweet_file.coordinates %>
+</p>
+
+<%= link_to 'Edit', edit_tweet_file_path(@tweet_file) %> |
+<%= link_to 'Back', tweet_files_path %>

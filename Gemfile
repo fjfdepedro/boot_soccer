@@ -48,8 +48,10 @@ end
 
 gem 'twitter'
 
+# server puma
 gem 'puma'
 
+# postgres
 gem 'pg'
 
 

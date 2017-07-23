@@ -1,7 +1,9 @@
 development:
   adapter: postgresql
-  database: bootsoccer
+  database: boot_soccer
   host: localhost
+  username: postgres
+  password: postgres
 
 production:
   url: <%= ENV['DATABASE_URL'] %>
