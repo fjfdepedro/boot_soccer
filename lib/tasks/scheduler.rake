@@ -41,4 +41,38 @@ namespace :scheduler do
       $twitter.update(tweet_p.strip)
     end
   end
+  task :recorder  => :environment do
+    $twitter.search("'have signed', lang: 'en'", result_type: "recent").take(50).each do |tweet|
+      #puts tweet.created_at
+      tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
+      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      tweet_p = (tweet_p).gsub(/RT /, '')
+      tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')      
+      #puts tweet.text
+      puts tweet_p.strip
+      TweetFile.create(:text => tweet_p.strip, :date => tweet.created_at.to_date) if TweetFile.where({:text => tweet_p.strip}).count == 0
+     end
+    
+    $twitter.search("'close to signing', lang: 'en'", result_type: "recent").take(50).each do |tweet|
+      #puts tweet.created_at
+      tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
+      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      tweet_p = (tweet_p).gsub(/RT /, '')
+      tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
+      #puts tweet.text
+      puts tweet_p.strip
+      TweetFile.create(:text => tweet_p.strip, :date => tweet.created_at.to_date) if TweetFile.where({:text => tweet_p.strip}).count == 0
+    end
+    
+    $twitter.search("'have rejected', lang: 'en'", result_type: "recent").take(50).each do |tweet|
+      #puts tweet.created_at
+      tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
+      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      tweet_p = (tweet_p).gsub(/RT /, '')
+      tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
+      #puts tweet.text
+      puts tweet_p.strip
+      TweetFile.create(:text => tweet_p.strip, :date => tweet.created_at.to_date) if TweetFile.where({:text => tweet_p.strip}).count == 0
+    end
+  end
 end
