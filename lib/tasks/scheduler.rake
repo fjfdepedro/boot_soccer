@@ -7,37 +7,37 @@ namespace :scheduler do
   end
   task :search_1 do
     $twitter.search("'have signed', lang: 'en'", result_type: "recent").take(1).each do |tweet|
-      puts tweet.created_at
+      #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
       tweet_p = (tweet_p).gsub(/#[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')      
-      puts tweet.text
-      puts tweet_p.strip
+      #puts tweet.text
+      #puts tweet_p.strip
       $twitter.update(tweet_p)
     end
   end
   task :search_2 do
     $twitter.search("'close to signing', lang: 'en'", result_type: "recent").take(1).each do |tweet|
-      puts tweet.created_at
+      #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
       tweet_p = (tweet_p).gsub(/#[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
-      puts tweet.text
-      puts tweet_p.strip
+      #puts tweet.text
+      #puts tweet_p.strip
       $twitter.update(tweet_p)
     end
   end
   task :search_3 do
     $twitter.search("'have rejected', lang: 'en'", result_type: "recent").take(1).each do |tweet|
-      puts tweet.created_at
+      #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
       tweet_p = (tweet_p).gsub(/#[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
-      puts tweet.text
-      puts tweet_p.strip
+      #puts tweet.text
+      #puts tweet_p.strip
       $twitter.update(tweet_p)
     end
   end
