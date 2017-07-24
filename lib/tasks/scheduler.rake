@@ -6,13 +6,12 @@ namespace :scheduler do
       config.access_token_secret = Rails.application.secrets[:twitter][:access_token_secret]
   end
   task :search_1 do
-    $twitter.search("'have signed', lang: 'en'", result_type: "recent").take(1).each do |tweet|
+    $twitter.search("'have signed', lang: 'en'", result_type: "recent").take(10).each do |tweet|
       #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
-      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      #tweet_p = (tweet_p).gsub(/@[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')      
-      #puts tweet.text
       puts tweet_p.strip
       $twitter.update(tweet_p.strip)
     end
@@ -21,7 +20,7 @@ namespace :scheduler do
     $twitter.search("'close to signing', lang: 'en'", result_type: "recent").take(1).each do |tweet|
       #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
-      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      #tweet_p = (tweet_p).gsub(/@[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
       #puts tweet.text
@@ -33,7 +32,7 @@ namespace :scheduler do
     $twitter.search("'have rejected', lang: 'en'", result_type: "recent").take(1).each do |tweet|
       #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
-      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      #tweet_p = (tweet_p).gsub(/@[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
       #puts tweet.text
@@ -45,7 +44,7 @@ namespace :scheduler do
     $twitter.search("'have signed', lang: 'en'", result_type: "recent").take(50).each do |tweet|
       #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
-      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      #tweet_p = (tweet_p).gsub(/@[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')      
       #puts tweet.text
@@ -56,7 +55,7 @@ namespace :scheduler do
     $twitter.search("'close to signing', lang: 'en'", result_type: "recent").take(50).each do |tweet|
       #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
-      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      #tweet_p = (tweet_p).gsub(/@[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
       #puts tweet.text
@@ -67,7 +66,7 @@ namespace :scheduler do
     $twitter.search("'have rejected', lang: 'en'", result_type: "recent").take(50).each do |tweet|
       #puts tweet.created_at
       tweet_p = (tweet.text).to_s.gsub(/RT @[\S]+/, '')
-      tweet_p = (tweet_p).gsub(/#[\S]+/, '')
+      #tweet_p = (tweet_p).gsub(/#[\S]+/, '')
       tweet_p = (tweet_p).gsub(/RT /, '')
       tweet_p = tweet_p.gsub(/https?:\/\/[\S]+/, '')
       #puts tweet.text
