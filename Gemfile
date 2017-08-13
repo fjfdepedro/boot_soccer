@@ -54,4 +54,7 @@ gem 'puma'
 # postgres
 gem 'pg'
 
+# d3js gem
+gem "d3-rails"
+
 
