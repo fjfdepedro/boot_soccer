@@ -63,7 +63,7 @@ section {
     font-weight: 200;
     letter-spacing: 1px; }
     #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
-      color: #fcbd20; }
+      color: #fdcc52; }
   #mainNav .navbar-toggler {
     font-size: 12px;
     padding: 8px 10px;
@@ -83,7 +83,7 @@ section {
     color: #222222; }
     #mainNav .navbar-nav > li > a:hover,
     #mainNav .navbar-nav > li > a:focus:hover {
-      color: #fdcc52; }
+      color: #E91E63; }
   @media (min-width: 992px) {
     #mainNav {
       border-color: transparent;
@@ -119,8 +119,8 @@ header.masthead {
   padding-bottom: 100px;
   color: white;
   background: url("bg-pattern.png"), #7b4397;
-  background: url("bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: url("bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430); }
+  background: url("bg-pattern.png"), -webkit-linear-gradient(to left, #969492,#060606);
+  background: url("bg-pattern.png"), linear-gradient(to left, #969492,#060606); }
   header.masthead .header-content {
     max-width: 500px;
     margin-bottom: 100px;
